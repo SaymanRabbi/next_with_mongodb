@@ -25,3 +25,9 @@ body {
     text-wrap: balance;
   }
 }
+html{
+  font-family: var(--font-poppins);
+}
+h1{
+  font-family: var(--font-geistSans);
+}

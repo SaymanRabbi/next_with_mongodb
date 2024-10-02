@@ -1,16 +1,7 @@
-import localFont from "next/font/local";
-import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { Providers } from "@/Global/provider";
+import Link from "next/link";
+import "./globals.css";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,12 +9,24 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+ 
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        
       >
-        {children}
+        {/* Navigation */}
+        <nav
+          className="bg-gray-800 text-white p-4 flex gap-x-4 justify-center"
+        >
+          <Link href="/">Home</Link>
+          <Link href="/products">Products</Link>
+          <Link href="/cart" className="ml-auto">Cart</Link>
+        </nav>
+        {/* End of Navigation */}
+        {/* <Provider store={store}> */}
+        <Providers>{children}</Providers>
+        {/* </Provider> */}
       </body>
     </html>
   );
