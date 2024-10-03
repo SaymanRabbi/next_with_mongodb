@@ -1,13 +1,8 @@
-
-
-
 import { getProducts } from "@/lib/Api/ProductApi/ProductApi";
 import Image from "next/image";
 import Button from "../components/Button/Button";
 const Products = async () => {
        const data = await getProducts()
-      
-       
     return (
         <div className=" text-red-500 font-bold uppercase mt-4">      
             {/* <div className=" mb-3">
